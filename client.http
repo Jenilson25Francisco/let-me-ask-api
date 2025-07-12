@@ -5,3 +5,32 @@ GET {{baseUrl}}/health
 ###
 
 GET {{baseUrl}}/rooms
+# @name getRooms
+
+###
+
+@roomId = {{createRoom.response.body.$.roomId}}
+
+###
+
+GET  {{baseUrl}}/rooms/eef6a42a-02c1-4644-b444-1799c2546743/questions
+
+###
+
+POST {{baseUrl}}/rooms
+# @name createRoom
+Content-Type: application/json
+
+{
+    "name": "Sala de springboot",
+    "description": "Esta é uma sala de springboot"
+}
+
+###
+
+POST {{baseUrl}}/rooms/eef6a42a-02c1-4644-b444-1799c2546743/questions
+Content-Type: application/json
+
+{
+    "question": "qual o conceito de x dentro de y?"
+}
